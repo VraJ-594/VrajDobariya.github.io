@@ -15,7 +15,7 @@ import { SEO } from "astro-seo";
 const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin).toString();
 const resolvedImageWithDomain = new URL(
   "/image.jpeg",
-  Astro.url.origin
+  Astro.url.origin,
 ).toString();
 
 interface Props {
@@ -44,7 +44,11 @@ const makeTitle = title ? title : "Vraj Dobariya | Portfolio";
     <meta name="author" content="Vraj Dobariya" />
     <meta name="theme-color" content="#0a0a0a" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/VrajDobariya.github.io/favicon.ico"
+    />
     <meta
       name="google-site-verification"
       content="AuMlxg6HJG3Rwtp1H81O3OmPVW4WaI5jrk1X4Onm0hU"
@@ -103,7 +107,7 @@ const makeTitle = title ? title : "Vraj Dobariya | Portfolio";
         content-visibility: auto;
       }
       body {
-        cursor: url("/cursor.png"), auto;
+        cursor: url("/VrajDobariya.github.io/cursor.png"), auto;
         font-family: "Poppins", sans-serif;
         background: #00001a;
         background-size: 22px 22px;
