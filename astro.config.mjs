@@ -43,7 +43,7 @@ export default defineConfig({
     }),
     playformCompress(),
   ],
-  site: "https://vraj-594.github.io",
+  site: "https://vraj-dobariya.github.io/",
   output: "static",
   outDir: "./docs",
   build: {
