@@ -37,13 +37,13 @@ export default defineConfig({
     }),
     robotsTxt({
       sitemap: [
-        "https://vraj-dobariya.github.io/sitemap-0.xml",
-        "https://vraj-dobariya.github.io/sitemap-index.xml",
+        "https://vraj-594.github.io/VrajDobariya.github.io/sitemap-0.xml",
+        "https://vraj-594.github.io/VrajDobariya.github.io/sitemap-index.xml",
       ],
     }),
     playformCompress(),
   ],
-  site: "https://vraj-dobariya.github.io/",
+  site: "https://vraj-594.github.io/VrajDobariya.github.io/",
   output: "static",
   outDir: "./docs",
   build: {
