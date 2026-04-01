@@ -1,7 +1,45 @@
 ---
 import { Image } from "astro:assets";
-import { getData } from "../utils/projects";
-const data = getData();
+
+// Import your images directly here
+import osp from "../assets/images/osp.webp";
+import lrucache from "../assets/images/lrucache.webp";
+import apigateway from "../assets/images/api-gateway-go.webp";
+
+// Define the exactly 3 key projects you want to display,
+// completely removing the need to use .slice() later.
+const keyProjects = [
+  {
+    name: "Online Scholarship Portal",
+    type: "WebApp",
+    github: "https://github.com/VraJ-594/OSP",
+    image: osp,
+    slug: "online-scholarship-portal",
+    description:
+      "Directed a 12-person team to build a full-stack platform using React.js, Node.js, Express.js, and PostgreSQL.",
+    tech: ["React.js", "Node.js", "Express.js", "PostgreSQL"],
+  },
+  {
+    name: "Concurrent API Gateway",
+    type: "Systems Engineering",
+    github: "https://github.com/VraJ-594/api-gateway-go",
+    image: apigateway,
+    slug: "api-gateway",
+    description:
+      "A high-performance, concurrent API Gateway built from scratch in Go, featuring dynamic routing, token-bucket rate limiting, and self-healing round-robin load balancing.",
+    tech: ["Go", "Concurrency", "Load Balancing", "Microservices"],
+  },
+  {
+    name: "LRU Cache System Design",
+    type: "System Design",
+    github: "https://github.com/VraJ-594/LRU_Cache_Java",
+    image: lrucache,
+    slug: "lru-cache",
+    description:
+      "Constructed a scalable, thread-safe LRU Cache in Java using HashMap + Doubly Linked List with O(1) operations.",
+    tech: ["Java", "OOPS", "Concurrency"],
+  },
+];
 ---
 
 <section id="projects" class="text-primary body-font w-5/6 mx-auto mt-48">
@@ -38,64 +76,63 @@ const data = getData();
       class="mx-auto grid grid-cols-1 gap-8 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 xl:grid xl:grid-cols-3"
     >
       {
-        data &&
-          data.slice(0, 3).map((item, index) => {
-            return (
-              <a
-                data-aos="fade-up"
-                data-aos-anchor-placement="center-bottom"
-                href="/VrajDobariya.github.io/projects"
-                class="relative mx-auto  overflow-hidden rounded-xl bg-transparent  border border-1 border-primary border-opacity-25 shadow-xl"
-              >
-                <div class="bg-transparent">
-                  <Image
-                    src={item.image}
-                    class=" object-cover bg-cover rounded-t-xl"
-                    alt=""
-                    transition:name={item.name}
-                  />
-                </div>
-                <div class=" z-20 py-4 px-4 rounded-b-xl bg-opacity-75">
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <h1 class="text-xl  font-bold text-white">{item.name}</h1>
-                      <p class="mb-1 text-sm text-white text-opacity-80">
-                        {item.type}
-                      </p>
-                    </div>
-                    <button
-                      aria-label={item.name}
-                      class="p-2 mr-2 bg-primary rounded-full bg-opacity-10"
-                    >
-                      <svg
-                        class="fill-primary h-6"
-                        viewBox="0 0 24 24"
-                        height="1em"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <>
-                          <g id="SVGRepo_bgCarrier" stroke-width="0" />
-                          <g id="SVGRepo_iconCarrier">
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z"
-                            />
-                          </g>
-                        </>
-                      </svg>
-                    </button>
+        keyProjects.map((item, index) => {
+          return (
+            <a
+              data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              href="/VrajDobariya.github.io/projects"
+              class="relative mx-auto  overflow-hidden rounded-xl bg-transparent  border border-1 border-primary border-opacity-25 shadow-xl"
+            >
+              <div class="bg-transparent">
+                <Image
+                  src={item.image}
+                  class=" object-cover bg-cover rounded-t-xl"
+                  alt=""
+                  transition:name={item.name}
+                />
+              </div>
+              <div class=" z-20 py-4 px-4 rounded-b-xl bg-opacity-75">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h1 class="text-xl  font-bold text-white">{item.name}</h1>
+                    <p class="mb-1 text-sm text-white text-opacity-80">
+                      {item.type}
+                    </p>
                   </div>
+                  <button
+                    aria-label={item.name}
+                    class="p-2 mr-2 bg-primary rounded-full bg-opacity-10"
+                  >
+                    <svg
+                      class="fill-primary h-6"
+                      viewBox="0 0 24 24"
+                      height="1em"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <>
+                        <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                        <g id="SVGRepo_iconCarrier">
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z"
+                          />
+                        </g>
+                      </>
+                    </svg>
+                  </button>
                 </div>
-              </a>
-            );
-          })
+              </div>
+            </a>
+          );
+        })
       }
     </div>
   </div>
