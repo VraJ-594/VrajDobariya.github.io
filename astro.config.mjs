@@ -49,4 +49,5 @@ export default defineConfig({
   build: {
     assets: "astro",
   },
+  base: "/VrajDobariya.github.io",
 });

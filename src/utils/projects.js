@@ -7,7 +7,7 @@ const data = [
   {
     name: "Online Scholarship Portal",
     type: "WebApp",
-    url: "/VrajDobariya.github.io/projects/",
+    url: "/projects/",
     github: "https://github.com/VraJ-594/OSP",
     image: osp,
     slug: "online-scholarship-portal",
@@ -18,7 +18,7 @@ const data = [
   {
     name: "Concurrent API Gateway",
     type: "Systems Engineering",
-    url: "/VrajDobariya.github.io/projects/",
+    url: "/projects/",
     github: "https://github.com/VraJ-594/api-gateway-go",
     image: apigateway,
     slug: "api-gateway",
@@ -29,7 +29,7 @@ const data = [
     {
     name: "LRU Cache System Design",
     type: "System Design",
-    url: "/VrajDobariya.github.io/projects/",
+    url: "/projects/",
     github: "https://github.com/VraJ-594/LRU_Cache_Java",
     image: lrucache,
     slug: "lru-cache",
@@ -40,7 +40,7 @@ const data = [
   {
     name: "VidhyaDhan",
     type: "Scholarship Management System",
-    url: "/VrajDobariya.github.io/projects/",
+    url: "/projects/",
     github: "https://github.com/VraJ-594/Vidhyadhan_DBMS_Project",
     image: vidhyadhan,
     slug: "vidhyadhan",
