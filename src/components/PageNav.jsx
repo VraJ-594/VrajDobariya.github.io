@@ -10,7 +10,7 @@ export default function PageNav(props) {
           <div className="flex sm:gap-8 gap-4">
             <button
               onClick={goBack}
-              className="px-3 flex items-center w-12 py-2 bg-primary bg-opacity-10 text-primary rounded-xl text-xl"
+              className="px-3 flex items-center w-12 py-2 bg-primary bg-opacity-10 hover:bg-opacity-20 transition-all text-primary rounded-xl text-xl"
             >
               <svg
                 className="fill-primary h-6"
@@ -71,7 +71,7 @@ export default function PageNav(props) {
       {$isOpen ? (
         <div
           id="menuItem"
-          className="absolute z-50 w-full sm:w-96 right-0 top-16 rounded-xl h-auto bg-black bg-opacity-100"
+          className="absolute z-50 w-full sm:w-96 right-0 top-16 rounded-xl h-auto bg-black bg-opacity-80 backdrop-blur-md"
         >
           <div className="flex flex-col justify-center items-center gap-4 px-4 m-4 py-4">
             <a

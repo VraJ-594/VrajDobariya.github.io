@@ -15,7 +15,8 @@
       <span class="w-1 bg-primary bg-opacity-25 rounded-md"></span>
 
       <div class="text-primary font-semibold flex flex-col gap-y-8">
-        <!-- <img class="w-16" src="https://cdn-icons-png.flaticon.com/512/2942/2942544.png" alt=""> -->
+
+        <!-- B.Tech -->
         <div class="flex gap-8 h-full items-center">
           <span
             data-aos="fade-right"
@@ -23,7 +24,7 @@
           ></span>
           <div
             data-aos="fade-up"
-            class="w-full justify-center flex flex-row border-primary/10 border-[1px] bg-primary/10 py-4 bg-opacity-10 px-8"
+            class="edu-card border-l-4 border-l-orange-400 w-full justify-center flex flex-row border-primary/10 border-[1px] bg-primary/10 py-4 bg-opacity-10 px-8"
           >
             <div class="max-md:text-sm text-xl font-normal flex flex-col">
               <h1>B.Tech in ICT</h1>
@@ -49,6 +50,7 @@
           </div>
         </div>
 
+        <!-- Class 12th -->
         <div class="flex gap-8 h-full items-center">
           <span
             data-aos="fade-right"
@@ -56,7 +58,7 @@
           ></span>
           <div
             data-aos="fade-up"
-            class="w-full justify-start flex flex-row border-primary/10 border-[1px] bg-primary/10 py-4 bg-opacity-10 px-8"
+            class="edu-card border-l-4 border-l-primary w-full justify-start flex flex-row border-primary/10 border-[1px] bg-primary/10 py-4 bg-opacity-10 px-8"
           >
             <div class="max-md:text-sm text-xl font-normal flex flex-col">
               <h1>Class 12th (GSEB)</h1>
@@ -82,6 +84,7 @@
           </div>
         </div>
 
+        <!-- Class 10th -->
         <div class="flex gap-8 h-full items-center">
           <span
             data-aos="fade-right"
@@ -89,7 +92,7 @@
           ></span>
           <div
             data-aos="fade-up"
-            class="w-full justify-start flex flex-row border-primary/10 border-[1px] bg-primary/10 py-4 bg-opacity-10 px-8"
+            class="edu-card border-l-4 border-l-green-400 w-full justify-start flex flex-row border-primary/10 border-[1px] bg-primary/10 py-4 bg-opacity-10 px-8"
           >
             <div class="max-md:text-sm text-xl font-normal flex flex-col">
               <h1>Class 10th (GSEB)</h1>
@@ -114,7 +117,19 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .edu-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  }
+  .edu-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+</style>

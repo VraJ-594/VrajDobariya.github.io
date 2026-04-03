@@ -10,13 +10,9 @@ const Glow = () => {
       setIsMouseInViewport(true);
     };
 
-    const handleMouseEnter = () => {
-      setIsMouseInViewport(true);
-    };
+    const handleMouseEnter = () => setIsMouseInViewport(true);
+    const handleMouseLeave = () => setIsMouseInViewport(false);
 
-    const handleMouseLeave = () => {
-      setIsMouseInViewport(false);
-    };
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseenter", handleMouseEnter);
     document.addEventListener("mouseleave", handleMouseLeave);
@@ -32,14 +28,18 @@ const Glow = () => {
     position: "fixed",
     top: mousePosition.y,
     left: mousePosition.x,
-    width: "400px",
-    height: "400px",
-    backgroundColor: "rgba(64, 64, 64, 0.3)",
+    width: "500px",
+    height: "500px",
+    background:
+      "radial-gradient(circle, rgba(120, 120, 140, 0.18) 0%, rgba(80, 80, 100, 0.08) 45%, transparent 70%)",
     borderRadius: "50%",
     transform: "translate(-50%, -50%)",
-    display: isMouseInViewport ? "block" : "none",
+    opacity: isMouseInViewport ? 1 : 0,
+    transition: "opacity 0.4s ease",
+    pointerEvents: "none",
   };
-  return <div className="blur-3xl pointer-events-none -z-30" style={glowStyle}></div>;
+
+  return <div className="pointer-events-none -z-30" style={glowStyle} />;
 };
 
 export default Glow;
