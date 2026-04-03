@@ -45,7 +45,6 @@ export default defineConfig({
   ],
   site: "https://vraj-594.github.io/VrajDobariya.github.io/",
   output: "static",
-  outDir: "./docs",
   build: {
     assets: "astro",
   },
