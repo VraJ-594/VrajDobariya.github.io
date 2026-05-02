@@ -2,6 +2,7 @@ import osp from "../assets/images/osp.webp";
 import lrucache from "../assets/images/lrucache.webp";
 import apigateway from "../assets/images/api-gateway-go.webp";
 import vidhyadhan from "../assets/images/vidhyadhan.webp";
+import infinitode from "../assets/images/infinitodeautobot.webp";
 
 const data = [
   {
@@ -43,6 +44,16 @@ const data = [
     description:
       "Modeled a normalized relational database in PostgreSQL for a scholarship platform; enforced BCNF using SQL.",
     tech: ["PostgreSQL", "PG Admin"],
+  },
+  {
+    name: "Infinitode Auto Bot Stage 6.3",
+    type: "Automating Game Bot",
+    github: "https://github.com/VraJ-594/Infinitode-Automation",
+    image: infinitode,
+    slug: "infinitode-auto-bot",
+    description:
+      "An automated game bot for Infinitode 2 game stage 6.3, designed to automate the resources gaining process.",
+    tech: ["Python", "Game Automation"],
   },
 ];
 
