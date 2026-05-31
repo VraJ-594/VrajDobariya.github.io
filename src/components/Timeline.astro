@@ -21,7 +21,6 @@ import { Image } from "astro:assets";
     <div class="flex gap-2 justify-center mt-16 max-md:w-5/6 w-3/4">
       <span class="w-1 bg-primary bg-opacity-25 rounded-md"></span>
       <div class="flex flex-col gap-y-8 w-full">
-
         <!-- Sameeksha Capital Internship -->
         <div class="text-primary font-semibold">
           <div class="flex gap-8 h-full items-center">
@@ -59,15 +58,37 @@ import { Image } from "astro:assets";
                 <span
                   class="h-0.5 mt-4 w-full bg-primary bg-opacity-25 rounded-md"
                 ></span>
-                <p class="mt-4 max-md:text-sm text-xl font-light">
-                  Working on <span class="text-indigo-300 font-semibold"
-                    >Research Works Automation</span
-                  > and <span class="text-indigo-300 font-semibold"
-                    >Fund Management System</span
-                  > in <span class="text-indigo-300 font-semibold"
-                    >Python Django</span
-                  >.
-                </p>
+                <ul
+                  class="mt-4 max-md:text-sm text-xl font-light list-disc ml-5"
+                >
+                  <li class="mb-2">
+                    Optimized backend infrastructure by upgrading to <span
+                      class="text-indigo-300 font-semibold">Django 5.x</span
+                    > and offloading daily-to-monthly OHLCV market data aggregations
+                    to <span class="text-indigo-300 font-semibold"
+                      >PostgreSQL</span
+                    >, reducing analytics latency by <span
+                      class="text-indigo-300 font-semibold">90%</span
+                    > (60s → 6s).
+                  </li>
+                  <li class="mb-2">
+                    Engineered <span class="text-indigo-300 font-semibold"
+                      >Python/GCP scraping pipelines</span
+                    > and an AI ingestion framework (Gemini, Claude) with chunking,
+                    retry logic, and approval queues to normalize <span
+                      class="text-indigo-300 font-semibold"
+                      >900+ unstructured reports</span
+                    > into the database.
+                  </li>
+                  <li class="mb-2">
+                    Architected a comprehensive <span
+                      class="text-indigo-300 font-semibold">RBAC system</span
+                    > across the React/DRF stack, and streamlined CI/CD by integrating
+                    <span class="text-indigo-300 font-semibold"
+                      >Bitbucket pipelines</span
+                    > for automated LLM-based PR reviews.
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -116,28 +137,36 @@ import { Image } from "astro:assets";
                   class="mt-4 max-md:text-sm text-xl font-light list-disc ml-5"
                 >
                   <li class="mb-2">
-                    Designed the <span class="text-indigo-300 font-semibold"
+                    Owned end-to-end design of the <span
+                      class="text-indigo-300 font-semibold"
                       >Google SecOps Data Export Enhanced Service API</span
-                    >, delivering detailed LLD specs.
+                    >, creating LLDs and aligning requirements with Product
+                    Managers and senior engineers.
                   </li>
                   <li class="mb-2">
-                    Developed 6 APIs (CRUD + 2 custom) using <span
+                    Developed <span class="text-indigo-300 font-semibold"
+                      >6 APIs across 3 microservices</span
+                    > (CRUD + new endpoints) using <span
                       class="text-indigo-300 font-semibold"
-                      >Protocol Buffers and Go</span
-                    > on the Goa service framework.
+                      >Protocol Buffers</span
+                    > and Google's Goa framework; applied feature-flag-based request
+                    routing with a <span class="text-indigo-300 font-semibold"
+                      >Spanner-backed</span
+                    > data access layer.
                   </li>
                   <li class="mb-2">
                     Achieved <span class="text-indigo-300 font-semibold"
                       >95%+ unit test coverage</span
-                    > and conducted rigorous manual API validation via Google RPC
-                    Studio.
+                    > and performed manual API validation via <span
+                      class="text-indigo-300 font-semibold"
+                      >Google RPC Studio</span
+                    >.
                   </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -145,7 +174,10 @@ import { Image } from "astro:assets";
 
 <style>
   .timeline-card {
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      background-color 0.25s ease;
   }
   .timeline-card:hover {
     transform: translateY(-3px);
