@@ -1,5 +1,6 @@
 import { isOpen } from "../utils/nav";
 import { useStore } from "@nanostores/react";
+import { useEffect } from "react";
 
 const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 
@@ -12,6 +13,13 @@ function withBase(path) {
 
 export default function PageNav(props) {
   const $isOpen = useStore(isOpen);
+
+  useEffect(() => {
+    const reset = () => isOpen.set(false);
+    reset();
+    window.addEventListener("astro:page-load", reset);
+    return () => window.removeEventListener("astro:page-load", reset);
+  }, []);
 
   const backIcon = (
     <svg
@@ -41,9 +49,9 @@ export default function PageNav(props) {
 
   return (
     <>
-      <header className="mt-6 z-50">
+      <header className="relative mt-6 z-50">
         <div>
-          <div className="flex sm:gap-8 gap-4">
+          <div className="flex sm:gap-8 gap-4 relative">
             {props.previousLink ? (
               <a
                 href={withBase(props.previousLink)}
@@ -90,43 +98,43 @@ export default function PageNav(props) {
                 </g>
               </svg>
             </button>
+            {$isOpen ? (
+              <div
+                id="menuItem"
+                className="absolute z-50 w-full sm:w-96 right-0 top-16 rounded-xl h-auto bg-black bg-opacity-80 backdrop-blur-md"
+              >
+                <div className="flex flex-col justify-center items-center gap-4 px-4 m-4 py-4">
+                  <a
+                    className="w-full py-2 bg-primary text-center rounded-xl bg-opacity-10 hover:bg-opacity-5 text-primary font-bold"
+                    href={withBase("/")}
+                  >
+                    Home
+                  </a>
+                  <a
+                    className="w-full py-2 bg-primary text-center rounded-xl bg-opacity-10 hover:bg-opacity-5 text-primary font-bold"
+                    href={withBase("/#about")}
+                  >
+                    About
+                  </a>
+                  <a
+                    className="w-full py-2 bg-primary text-center rounded-xl bg-opacity-10 hover:bg-opacity-5 text-primary font-bold"
+                    href={withBase("/#experience")}
+                  >
+                    Experience
+                  </a>
+                  <a
+                    className="w-full py-2 bg-primary text-center rounded-xl bg-opacity-10 hover:bg-opacity-5 text-primary font-bold"
+                    href="https://drive.google.com/file/d/1jmssDy_I_87GMCJsIkIARXT1lU2YvgLy/view"
+                    target="_blank"
+                  >
+                    Download CV
+                  </a>
+                </div>
+              </div>
+            ) : null}
           </div>
         </div>
       </header>
-      {$isOpen ? (
-        <div
-          id="menuItem"
-          className="absolute z-50 w-full sm:w-96 right-0 top-16 rounded-xl h-auto bg-black bg-opacity-80 backdrop-blur-md"
-        >
-          <div className="flex flex-col justify-center items-center gap-4 px-4 m-4 py-4">
-            <a
-              className="w-full py-2 bg-primary text-center rounded-xl bg-opacity-10 hover:bg-opacity-5 text-primary font-bold"
-              href={withBase("/")}
-            >
-              Home
-            </a>
-            <a
-              className="w-full py-2 bg-primary text-center rounded-xl bg-opacity-10 hover:bg-opacity-5 text-primary font-bold"
-              href={withBase("/#about")}
-            >
-              About
-            </a>
-            <a
-              className="w-full py-2 bg-primary text-center rounded-xl bg-opacity-10 hover:bg-opacity-5 text-primary font-bold"
-              href={withBase("/#experience")}
-            >
-              Experience
-            </a>
-            <a
-              className="w-full py-2 bg-primary text-center rounded-xl bg-opacity-10 hover:bg-opacity-5 text-primary font-bold"
-              href="https://drive.google.com/file/d/1oPF9Hdi_puldKgTQgRs4hQKxpcyQ6YbQ/view?usp=sharing"
-              target="_blank"
-            >
-              Download CV
-            </a>
-          </div>
-        </div>
-      ) : null}
     </>
   );
 }
