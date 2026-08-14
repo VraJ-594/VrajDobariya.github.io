@@ -40,6 +40,7 @@ const keyProjects = [
     tech: ["Java", "OOPS", "Concurrency"],
   },
 ];
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 ---
 
 <section id="projects" class="text-primary body-font w-5/6 mx-auto mt-48">
@@ -67,7 +68,7 @@ const keyProjects = [
       <a
         class="text-primary px-4 py-2.5 bg-primary rounded-xl bg-opacity-10"
         aria-label="projects link"
-        href="/VrajDobariya.github.io/projects"
+        href={`${base}projects`}
       >
         View all</a
       >
@@ -81,7 +82,7 @@ const keyProjects = [
             <a
               data-aos="fade-up"
               data-aos-anchor-placement="center-bottom"
-              href="/VrajDobariya.github.io/projects"
+              href={`${base}projects`}
               class="relative mx-auto  overflow-hidden rounded-xl bg-transparent  border border-1 border-primary border-opacity-25 shadow-xl"
             >
               <div class="bg-transparent">

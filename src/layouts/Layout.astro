@@ -27,6 +27,7 @@ import { ViewTransitions } from "astro:transitions";
 import preload from "astro-preload";
 import Glow from "../components/Glow";
 const makeTitle = title ? title : "Vraj Dobariya | Portfolio";
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 ---
 
 <!doctype html>
@@ -47,7 +48,7 @@ const makeTitle = title ? title : "Vraj Dobariya | Portfolio";
     <link
       rel="icon"
       type="image/x-icon"
-      href="/VrajDobariya.github.io/favicon.ico"
+      href={`${base}favicon.ico`}
     />
     <meta
       name="google-site-verification"
@@ -103,9 +104,6 @@ const makeTitle = title ? title : "Vraj Dobariya | Portfolio";
     <style is:global>
       * {
       }
-      img {
-        content-visibility: auto;
-      }
       body {
         cursor: url("/VrajDobariya.github.io/cursor.png"), auto;
         font-family: "Poppins", sans-serif;
@@ -130,5 +128,16 @@ const makeTitle = title ? title : "Vraj Dobariya | Portfolio";
       }
     </style>
     <script src="../utils/aos.js"></script>
+    <script>
+      if (!window.__astroAnchorScroll) {
+        window.__astroAnchorScroll = true;
+        window.addEventListener("astro:page-load", () => {
+          const hash = window.location.hash;
+          if (!hash) return;
+          const el = document.getElementById(hash.slice(1));
+          if (el) el.scrollIntoView();
+        });
+      }
+    </script>
   </body>
 </html>

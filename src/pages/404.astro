@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageNav from "../components/PageNav";
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 ---
 
 <Layout title="You lost lmao">
   <main class="w-5/6 mx-auto relative" transition:persist>
-    <PageNav title="You Lost Lmao" client:load />
+    <PageNav title="You Lost Lmao" previousLink="/" client:load />
     <section data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div class="text-primary mt-36">
         <h1 class="text-9xl font-semibold flex justify-center items-center">
@@ -15,10 +16,10 @@ import PageNav from "../components/PageNav";
           A page you are trying to access does not exist
         </p>
         <div class="flex justify-center mt-6">
-          <button
-            onclick="history.back();"
+          <a
+            href={base}
             class="px-4 py-2 bg-primary rounded-xl bg-opacity-10 font-semibold"
-            >Go Back</button
+            >Go Home</a
           >
         </div>
       </div>
