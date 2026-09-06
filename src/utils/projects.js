@@ -8,7 +8,8 @@ const data = [
   {
     name: "Online Scholarship Portal",
     type: "WebApp",
-    github: "https://github.com/VraJ-594/OSP",
+    github: "https://github.com/VraJ-594/online_scholarship_portal",
+    deployment: "https://osp-silk.vercel.app/",
     image: osp,
     slug: "online-scholarship-portal",
     description:
